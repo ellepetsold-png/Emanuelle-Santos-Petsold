@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fã Clube Ferrari - Calendário F1</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+  <div class="theme-switch">
+    <input type="checkbox" id="switchTheme">
+    <label for="switchTheme" class="switch-label"></label>
+</div>
+
+<nav class="navbar navbar-dark bg-danger fixed-top" style="background-color: #c30000;">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-white" style="color: white !important;" href="index.html">Ferrari F1 Team</a>
+    
+    <button class="navbar-toggler custom-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="galeria.html">Galeria</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="calendariof1.html">Calendário F1</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top: 100px;">
+    <h1>Calendário Fórmula 1 – Temporada 2025</h1>
+    <table>
+      <tr>
+        <th>Data</th>
+        <th>Grande Prêmio</th>
+        <th>Local / Cidade / País</th>
+      </tr>
+      <tr><td>14-16 Mar</td><td>Austrália</td><td>Melbourne, Austrália</td></tr>
+      <tr><td>21-23 Mar</td><td>China</td><td>Xangai, China</td></tr>
+      <tr><td>04-06 Abr</td><td>Japão</td><td>Suzuka, Japão</td></tr>
+      <tr><td>11-13 Abr</td><td>Bahrain</td><td>Sakhir, Bahrein</td></tr>
+      <tr><td>18-20 Abr</td><td>Arábia Saudita</td><td>Jeddah, Arábia Saudita</td></tr>
+      <tr><td>02-04 Mai</td><td>Miami</td><td>Miami, EUA</td></tr>
+      <tr><td>16-18 Mai</td><td>Emília-Romanha / Itália</td><td>Imola, Itália</td></tr>
+      <tr><td>23-25 Mai</td><td>Mônaco</td><td>Monte Carlo, Mônaco</td></tr>
+      <tr><td>30 Mai – 01 Jun</td><td>Espanha</td><td>Barcelona, Espanha</td></tr>
+      <tr><td>13-15 Jun</td><td>Canadá</td><td>Montreal, Canadá</td></tr>
+      <tr><td>27-29 Jun</td><td>Áustria</td><td>Spielberg, Áustria</td></tr>
+      <tr><td>04-06 Jul</td><td>Reino Unido</td><td>Silverstone, Reino Unido</td></tr>
+      <tr><td>25-27 Jul</td><td>Bélgica</td><td>Spa-Francorchamps, Bélgica</td></tr>
+      <tr><td>01-03 Ago</td><td>Hungria</td><td>Budapeste, Hungria</td></tr>
+      <tr><td>29-31 Ago</td><td>Países Baixos</td><td>Zandvoort, Países Baixos</td></tr>
+      <tr><td>05-07 Set</td><td>Itália (Monza)</td><td>Monza, Itália</td></tr>
+      <tr><td>19-21 Set</td><td>Azerbaijão</td><td>Baku, Azerbaijão</td></tr>
+      <tr><td>03-05 Out</td><td>Singapura</td><td>Singapura, Singapura</td></tr>
+      <tr><td>17-19 Out</td><td>Estados Unidos</td><td>Austin, EUA</td></tr>
+      <tr><td>24-26 Out</td><td>México</td><td>Cidade do México, México</td></tr>
+      <tr><td>07-09 Nov</td><td>Brasil</td><td>São Paulo, Brasil</td></tr>
+      <tr><td>21-23 Nov</td><td>Las Vegas</td><td>Las Vegas, EUA</td></tr>
+      <tr><td>28-30 Nov</td><td>Catar</td><td>Lusail, Catar</td></tr>
+      <tr><td>05-07 Dez</td><td>Abu Dhabi</td><td>Yas Marina, Emirados Árabes Unidos</td></tr>
+    </table>
+</section>
+
+ <section id="contato"> 
+    <footer>
+        <p>Siga-nos nas redes sociais:</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+        <p>&copy; 2025 Fã Clube Scuderia Ferrari. Todos os direitos reservados.</p>
+    </footer>
+</section>
+
+<script>
+// ===== MODO ESCURO / CLARO =====
+const botaoTema = document.getElementById("switchTheme");
+
+// Carregar tema salvo
+if (localStorage.getItem("tema") === "light") {
+    document.body.classList.add("light-mode");
+    botaoTema.checked = true;
+}
+
+botaoTema.addEventListener("change", () => {
+    document.body.classList.toggle("light-mode");
+
+    // Salvar tema
+    if (document.body.classList.contains("light-mode")) {
+        localStorage.setItem("tema", "light");
+    } else {
+        localStorage.setItem("tema", "dark");
+    }
+});
+</script>
+
+</body>
+</html>

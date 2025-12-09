@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fã Clube Ferrari - Galeria</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="theme-switch">
+    <input type="checkbox" id="switchTheme">
+    <label for="switchTheme" class="switch-label"></label>
+</div>
+
+    
+    <nav class="navbar navbar-dark bg-danger fixed-top" style="background-color: #c30000;">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-white" style="color: white !important;" href="index.html">Ferrari F1 Team</a>
+    
+    <button class="navbar-toggler custom-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false"
+              aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link text-white" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="galeria.html">Galeria</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white"  href="calendariof1.html">Calendário F1</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <section id="galeria">
+    <h2>Galeria de Fotos da Scuderia Ferrari</h2>
+
+    <div class="card">
+        <h2>Motorhome Ferrari</h2>
+        <img src="./galeria/motorhome.jpeg" alt="Motorhome Ferrari">
+        <p>O motorhome da Scuderia Ferrari é um exemplo de luxo e funcionalidade, projetado para atender às necessidades da equipe durante os finais de semana de corrida.</p>
+        <button class="like-btn">❤️ Curtir</button>
+    </div>
+
+    <div class="card">
+        <h2>SF25, Carro da atual temporada</h2>
+        <img src="./galeria/sf25.jpeg" alt="SF25">
+        <p>O SF25 é o carro da Scuderia Ferrari para la temporada atual da Fórmula 1, apresentando inovações aerodinâmicas e um design agressivo.</p>
+        <button class="like-btn">❤️ Curtir</button>
+    </div>
+
+    <div class="card">
+        <h2>Pilotos Ferrari 2025</h2>
+        <img src="./galeria/pilotos.jpeg" alt="Pilotos Ferrari 2025">
+        <p>Os pilotos da Scuderia Ferrari para 2025 são Charles Leclerc e Lewis Hamilton, ambos em busca do título mundial...</p>
+        <button class="like-btn">❤️ Curtir</button>
+    </div>
+
+    <div class="card">
+        <h2>Chefe de equipe da Ferrari</h2>
+        <img src="./galeria/fredvasseur.jpeg" alt="Frédéric Vasseur">
+        <p>O chefe de equipe da Scuderia Ferrari é Frédéric Vasseur, um experiente dirigente do automobilismo que assumiu em 2023...</p>
+        <button class="like-btn">❤️ Curtir</button>
+    </div>
+</section>
+
+     <section id="contato"> 
+    <footer>
+        <p>Siga-nos nas redes sociais:</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+        <p>&copy; 2025 Fã Clube Scuderia Ferrari. Todos os direitos reservados.</p>
+    </footer>
+</section>
+
+<script>
+// ===== MODO ESCURO / CLARO =====
+const botaoTema = document.getElementById("switchTheme");
+
+// Carregar tema salvo
+if (localStorage.getItem("tema") === "light") {
+    document.body.classList.add("light-mode");
+    botaoTema.checked = true;
+}
+
+botaoTema.addEventListener("change", () => {
+    document.body.classList.toggle("light-mode");
+
+    // Salvar tema
+    if (document.body.classList.contains("light-mode")) {
+        localStorage.setItem("tema", "light");
+    } else {
+        localStorage.setItem("tema", "dark");
+    }
+});
+
+// ===== CURTIR CARDS DA GALERIA =====
+
+document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('liked');
+        btn.textContent = btn.classList.contains('liked') ? "❤️ Curtido" : "❤️ Curtir";
+    });
+});
+
+</script>
+</body>
+</html>
+      
